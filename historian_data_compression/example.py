@@ -24,10 +24,10 @@ max = df["Price"].max()
 min = df["Price"].min()
 dbc_deadband_perc = 0.5 / 100                                                                       # typically 0.5 %
 dbc_deviation = dbc_deadband_perc * (max - min) / 2                                                 # deviation = deadband / 2
-dbc_timeout = 0                                                                                     # seconds, but 0 eauals 'no timeout'
+dbc_timeout = 0                                                                                     # seconds, but 0 equals 'no timeout'
 swdc_deadband_perc = 1 / 100                                                                        # typically 1.0 %
 swdc_deviation = swdc_deadband_perc * (max - min) / 2     
-swdc_timeout = 0                                                                                    # seconds, but 0 eauals 'no timeout'
+swdc_timeout = 0                                                                                    # seconds, but 0 equals 'no timeout'
 
 df_dbc = pd.DataFrame(
     tuple(
