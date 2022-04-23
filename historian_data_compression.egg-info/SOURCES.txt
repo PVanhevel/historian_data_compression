@@ -1,0 +1,7 @@
+LICENSE
+README.rst
+setup.py
+historian_data_compression.egg-info/PKG-INFO
+historian_data_compression.egg-info/SOURCES.txt
+historian_data_compression.egg-info/dependency_links.txt
+historian_data_compression.egg-info/top_level.txt
