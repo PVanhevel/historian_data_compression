@@ -4,7 +4,7 @@ Title: Historian Data Compression
 
 Compress historian data (typically a timestamp and a value dataframe column) with the deadband and swinging door algorithm in Python.
 
-Based on the [swinging door library](https://pypi.org/project/swinging-door/).
+Based on the [swinging door library](https://pypi.org/project/swinging-door/) of [Aleksandr F. Mikhaylov (ChelAxe)](mailto:chelaxe@gmail.com).
 
 The swinging door algorithm is clearly explained in this [presentation](https://slideplayer.com/slide/3884/),
 and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/ThornhillEtAlCompressionJPC2004.pdf).
