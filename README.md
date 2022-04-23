@@ -3,7 +3,7 @@
 
 ## Project description
 
-Compress historian data (typically a timestamp and a value dataframe column) with the deadband and swinging door algorithm in Python.
+Compress historian data (typically 2 dataframe columns with a timestamp and a logged value) with the deadband and swinging door algorithm in Python.
 
 Based on the [swinging door library](https://pypi.org/project/swinging-door/) of [Aleksandr F. Mikhaylov (ChelAxe)](mailto:chelaxe@gmail.com).
 
