@@ -6,9 +6,12 @@
 Compress historian data (typically 2 dataframe columns with a timestamp and a logged value) with the deadband and swinging door algorithm in Python.
 
 Based on the [swinging door library](https://pypi.org/project/swinging-door/) of [Aleksandr F. Mikhaylov (ChelAxe)](mailto:chelaxe@gmail.com).
+The default for the extra timeout parameter is 0, which actually means 'no timeout'.
 
 The swinging door algorithm is clearly explained in this [presentation](https://slideplayer.com/slide/3884/),
 and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/ThornhillEtAlCompressionJPC2004.pdf).
+
+
 
 ## Usage
 
