@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Historian Data Compression</h1>
+<h1 align="center">Welcome to the Historian Data Compression module</h1>
 
 
 ## Project description
