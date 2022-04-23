@@ -18,7 +18,7 @@ and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/Thorn
 To avoid timestamp issues:
 
    1.  sort the dateframe by timestamp,
-   2.  and convert negative timestamps (in Windows, dates before 1970-01-01) by adding the required number of seconds.
+   2.  and convert negative timestamps (in Windows, dates before 1970-01-01) by adding a number of seconds before the compression, and deducting again afterwards.
 
 ## Demo
 
