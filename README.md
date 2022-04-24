@@ -84,7 +84,7 @@ print(
       f"{len(df_dbc_swdc) / len(df):>10.1%}"
 )
 
-# returns
+# returns:
 
 Size after 1st stage compression (deadband only):                84.7%
 Size after 2nd stage compression (deadband + swinging door):     26.8%
@@ -152,6 +152,10 @@ print(
       "Size after swinging door compression:           "
       f'{df_swdc["GISTEMP_compressed"].count() / df_swdc["GISTEMP"].count():>10.1%}'
 )
+
+# returns:
+
+Size after swinging door compression:                39.9%
 
 ```
 
