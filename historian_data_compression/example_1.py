@@ -16,18 +16,21 @@ df = pd.read_csv(r"https://datahub.io/core/natural-gas/r/daily.csv")
 df["Date"] = pd.to_datetime(df["Date"], format="%Y-%m-%d %H:%M:%S")
 
 df = df.sort_values("Date")
-first_ts = df["Date"].min().timestamp()
-if first_ts < 0:
-    df["Date"] = df["Date"] + timedelta(seconds=int(first_ts))
+days = (datetime(1970, 1, 1) - df.loc[0, "Date"]).total_seconds() / (60 * 60 * 24)
+if days > 0:
+    days =  int(days) + 100
+else:
+    days = 0
+df["Date"] = df["Date"] + pd.Timedelta(days=days)
 
 max = df["Price"].max()
 min = df["Price"].min()
 dbc_deadband_perc = 0.5 / 100                                                                       # typically 0.5 %
 dbc_deviation = dbc_deadband_perc * (max - min) / 2                                                 # deviation = deadband / 2
-dbc_timeout = 0                                                                                     # seconds, but 0 equals 'no timeout'
+dbc_timeout = 0                                                                                     # seconds, but 0 eauals 'no timeout'
 swdc_deadband_perc = 1 / 100                                                                        # typically 1.0 %
 swdc_deviation = swdc_deadband_perc * (max - min) / 2     
-swdc_timeout = 0                                                                                    # seconds, but 0 equals 'no timeout'
+swdc_timeout = 0                                                                                    # seconds, but 0 eauals 'no timeout'
 
 df_dbc = pd.DataFrame(
     tuple(
@@ -51,9 +54,9 @@ df_dbc_swdc = pd.DataFrame(
         )
     )
 )
-if first_ts < 0:
-    df_dbc["Date"] = df_dbc["Date"] - timedelta(seconds=int(first_ts))
-    df_dbc_swdc["Date"] = df_dbc_swdc["Date"] - timedelta(seconds=int(first_ts))
+if days > 0:
+    df_dbc["Date"] = df_dbc["Date"] - pd.Timedelta(days=days)
+    df_dbc_swdc["Date"] = df_dbc_swdc["Date"] - pd.Timedelta(days=days)
 print(
       "Size after 1st stage compression (deadband only):           "
       f"{len(df_dbc) / len(df):>10.1%}"
