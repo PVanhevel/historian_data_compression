@@ -1,9 +1,9 @@
-<h1 align="center">Welcome to the Historian Data Compression module</h1>
+# Historian Data Compression
 
+Historian Data Compression is a Python library used to compress historian data, using the deadband and/or swinging door algorithm.
+Historian data are typically 2 dataframe columns with a timestamp and a logged value.
 
 ## Project description
-
-Compress historian data (typically 2 dataframe columns with a timestamp and a logged value) with the deadband and swinging door algorithm in Python.
 
 Based on the [swinging door library](https://pypi.org/project/swinging-door/) of [Aleksandr F. Mikhaylov (ChelAxe)](mailto:chelaxe@gmail.com).
 The default for the extra timeout parameter is 0, which actually means 'no timeout'.
@@ -11,7 +11,13 @@ The default for the extra timeout parameter is 0, which actually means 'no timeo
 The swinging door algorithm is clearly explained in this [presentation](https://slideplayer.com/slide/3884/),
 and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/ThornhillEtAlCompressionJPC2004.pdf).
 
+## Installation
 
+Use the package manager [pip](https://pypi.org/project/historian-data-compression/) to install historian_data_compression.
+
+```bash
+pip install historian_data_compression
+```
 
 ## Usage
 
@@ -20,7 +26,7 @@ To avoid timestamp issues:
    1.  sort the dateframe by timestamp,
    2.  and convert negative timestamps (in Windows, dates before 1970-01-01) by adding a number of seconds before the compression, and deducting again afterwards.
 
-## Demo
+## Simple demo (dataframe with 1 significant value column)
 
 ``` {.python}
 import pandas as pd
@@ -77,9 +83,21 @@ print(
       "Size after 2nd stage compression (deadband + swinging door):"
       f"{len(df_dbc_swdc) / len(df):>10.1%}"
 )
-```
+
+# returns
 
 Size after 1st stage compression (deadband only):                84.7%
-
 Size after 2nd stage compression (deadband + swinging door):     26.8%
 
+```
+
+## Example with dataframe with multiple significant value columns
+
+``` {.python}
+
+WORK IN PROGRESS
+
+```
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
