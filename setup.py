@@ -15,7 +15,7 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
-VERSION = '0.0.5'
+VERSION = '0.0.8'
 DESCRIPTION = "Deadband and swinging door compression of historian data with Python."
 
 setup(
@@ -32,6 +32,7 @@ setup(
         "Source": "https://github.com/PVanhevel/historian_data_compression",
         "Tracker": "https://github.com/PVanhevel/historian_data_compression/issues",
     },
+    packages=find_packages(),
     install_requires=[],
     keywords=['python', 'historian', 'compression', 'deadband', 'swing door'],
     license="MIT",
