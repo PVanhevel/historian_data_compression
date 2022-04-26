@@ -1,12 +1,11 @@
 Metadata-Version: 2.1
 Name: historian-data-compression
-Version: 0.0.8
+Version: 0.0.14
 Summary: Deadband and swinging door compression of historian data with Python.
 Home-page: https://github.com/PVanhevel/
 Author: Peter Vanhevel
 Author-email: peter.vanhevel@gmail.com
 License: MIT
-Project-URL: Documentation, https://swingingdoor.readthedocs.io/en/latest/
 Project-URL: Source, https://github.com/PVanhevel/historian_data_compression
 Project-URL: Tracker, https://github.com/PVanhevel/historian_data_compression/issues
 Keywords: python,historian,compression,deadband,swing door

@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+src/historian_data_compression/__init__.py
+src/historian_data_compression/historian_data_compression.py
+src/historian_data_compression.egg-info/PKG-INFO
+src/historian_data_compression.egg-info/SOURCES.txt
+src/historian_data_compression.egg-info/dependency_links.txt
+src/historian_data_compression.egg-info/top_level.txt
+src/historian_data_compression/examples/__init__.py
+src/historian_data_compression/examples/example_1.py
+src/historian_data_compression/examples/example_2.py
