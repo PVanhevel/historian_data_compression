@@ -13,7 +13,7 @@ Always archive the last point.
 """
 
 __author__ = "Peter Vanhevel (td03pvh)"
-__version__ = "v3.0"
+__version__ = "0.1.0"
 __date__ = "2022-04-20"
 
 import pandas as pd

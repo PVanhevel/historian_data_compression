@@ -9,6 +9,7 @@ Based on the [swinging door library](https://pypi.org/project/swinging-door/) of
 The default for the extra timeout parameter is 0, which actually means 'no timeout'.
 
 The swinging door algorithm is clearly explained in this [presentation](https://slideplayer.com/slide/3884/),
+this [animation](https://www.youtube.com/watch?v=fdH7dYTN7gM) where 'exception' == 'deadband compression' and 'compression' == 'swinging door compression',
 and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/ThornhillEtAlCompressionJPC2004.pdf).
 
 ## Installation

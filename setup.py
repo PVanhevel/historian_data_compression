@@ -10,10 +10,17 @@ setup
 
 from setuptools import setup, find_packages
 from pathlib import Path
-this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()
+import re
+from win32api import *
 
-VERSION = '0.0.14'
+this_directory = Path(__file__).parent
+path = this_directory.joinpath("src", "historian_data_compression", "historian_data_compression.py")
+
+long_description = (this_directory / "README.md").read_text()
+verstrline = open(path, "rt", encoding="utf8").read()
+vsre = r"^__version__ = ['\"]([^'\"]*)['\"]"
+
+VERSION = re.search(vsre, verstrline, re.M).group(1)
 DESCRIPTION = "Deadband and swinging door compression of historian data with Python."
 
 setup(
@@ -32,7 +39,7 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src", "historian_data_compression": "src/historian_data_compression"},
     install_requires=[],
-    keywords=['python', 'historian', 'compression', 'deadband', 'swing door'],
+    keywords=['python', 'historian', 'compression', 'deadband', 'swinging door'],
     license="MIT",
     platforms="any",
     classifiers=[
