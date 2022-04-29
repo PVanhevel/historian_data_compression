@@ -37,8 +37,8 @@ tol = pd.Timedelta("0.5 days")
 for col in cols_float:
     max = df[col].max()
     min = df[col].min()
-    swdc_deadband_perc = 5 / 100                                                                    # typically 1.0 %
-    swdc_deviation = swdc_deadband_perc * (max - min) / 2     
+    swdc_deadband_perc = 5                                                                          # typically 1.0 %
+    swdc_deviation = swdc_deadband_perc / 100 * (max - min) / 2     
     swdc_timeout = 0                                                                                # seconds, but 0 eauals 'no timeout'
     
     df_swdc = pd.DataFrame(

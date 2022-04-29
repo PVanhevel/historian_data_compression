@@ -1,7 +1,7 @@
 # Historian Data Compression
 
 Historian Data Compression is a Python library used to compress historian data, using the deadband and/or swinging door algorithm.
-Historian data are typically 2 dataframe columns with a timestamp and a logged value.
+Historian data are typically 2 dataframe columns, one with a timestamp and one with a logged value.
 
 ## Project description
 
@@ -9,7 +9,7 @@ Based on the [swinging door library](https://pypi.org/project/swinging-door/) of
 The default for the extra timeout parameter is 0, which actually means 'no timeout'.
 
 The swinging door algorithm is clearly explained in this [presentation](https://slideplayer.com/slide/3884/),
-this [animation](https://www.youtube.com/watch?v=fdH7dYTN7gM) where 'exception' == 'deadband compression' and 'compression' == 'swinging door compression',
+this [animation](https://www.youtube.com/watch?v=fdH7dYTN7gM) ('exception' == 'deadband compression' & 'compression' == 'swinging door compression'),
 and in this [file](https://spiral.imperial.ac.uk/bitstream/10044/1/14604/2/ThornhillEtAlCompressionJPC2004.pdf).
 
 ## Installation
@@ -44,12 +44,12 @@ if first_ts < 0:
 
 max = df["Price"].max()
 min = df["Price"].min()
-dbc_deadband_perc = 0.5 / 100                                                                       # typically 0.5 %
-dbc_deviation = dbc_deadband_perc * (max - min) / 2                                                 # deviation = deadband / 2
-dbc_timeout = 0                                                                                     # seconds, but 0 equals 'no timeout'
-swdc_deadband_perc = 1 / 100                                                                        # typically 1.0 %
-swdc_deviation = swdc_deadband_perc * (max - min) / 2     
-swdc_timeout = 0                                                                                    # seconds, but 0 equals 'no timeout'
+dbc_deadband_perc = 0.5                                                                             # typically 0.5 %
+dbc_deviation = dbc_deadband_perc / 100 * (max - min) / 2                                           # deviation = deadband / 2
+dbc_timeout = 0                                                                                     # seconds, but 0 eauals 'no timeout'
+swdc_deadband_perc = 1                                                                              # typically 1.0 %
+swdc_deviation = swdc_deadband_perc / 100  * (max - min) / 2     
+swdc_timeout = 0                                                                                    # seconds, but 0 eauals 'no timeout'
 
 df_dbc = pd.DataFrame(
     tuple(
@@ -125,8 +125,8 @@ tol = pd.Timedelta("0.5 days")
 for col in cols_float:
     max = df[col].max()
     min = df[col].min()
-    swdc_deadband_perc = 5 / 100                                                                    # typically 1.0 %
-    swdc_deviation = swdc_deadband_perc * (max - min) / 2     
+    swdc_deadband_perc = 5                                                                          # typically 1.0 %
+    swdc_deviation = swdc_deadband_perc / 100 * (max - min) / 2     
     swdc_timeout = 0                                                                                # seconds, but 0 eauals 'no timeout'
     
     df_swdc = pd.DataFrame(

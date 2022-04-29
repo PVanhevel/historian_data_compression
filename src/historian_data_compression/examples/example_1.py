@@ -25,11 +25,11 @@ df["Date"] = df["Date"] + pd.Timedelta(days=days)
 
 max = df["Price"].max()
 min = df["Price"].min()
-dbc_deadband_perc = 0.5 / 100                                                                       # typically 0.5 %
-dbc_deviation = dbc_deadband_perc * (max - min) / 2                                                 # deviation = deadband / 2
+dbc_deadband_perc = 0.5                                                                             # typically 0.5 %
+dbc_deviation = dbc_deadband_perc / 100 * (max - min) / 2                                           # deviation = deadband / 2
 dbc_timeout = 0                                                                                     # seconds, but 0 eauals 'no timeout'
-swdc_deadband_perc = 1 / 100                                                                        # typically 1.0 %
-swdc_deviation = swdc_deadband_perc * (max - min) / 2     
+swdc_deadband_perc = 1                                                                              # typically 1.0 %
+swdc_deviation = swdc_deadband_perc / 100  * (max - min) / 2     
 swdc_timeout = 0                                                                                    # seconds, but 0 eauals 'no timeout'
 
 df_dbc = pd.DataFrame(
